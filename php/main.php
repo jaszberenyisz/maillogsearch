@@ -40,7 +40,9 @@
     $out.='<div id="loglines">'."\n";
     for ($i=0;$i<count($c);$i++)
     {
-      $ctxt=htmlspecialchars(make_links($c[$i]));
+      $ctxt=$c[$i];
+      $ctxt=htmlspecialchars($ctxt);
+      $ctxt=make_links($c[$i]);
       $out.='
   <div class="logline row">
     <div class="loglinecontent col"><div class="loglinenumber">'.(int)($i+1).'</div> '.$ctxt.'</div>
