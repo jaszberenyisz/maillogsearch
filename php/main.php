@@ -7,7 +7,7 @@
 <div id="control" class="row w-50">
   <div class="col">
     <form action="?" method="post" enctype="multipart/form-data">
-      <input type="text" name="q" id="q" placeholder="Keresés..." value="'.$q.'" />
+      <input type="text" name="q" id="q" placeholder="'._search.'" value="'.$q.'" />
       <input type="Submit" value="OK" />
     </form>
   </div><!-- class:col -->
