@@ -19,12 +19,13 @@ input:focus, input:hover, select:focus, select:hover, textarea:focus, textarea:h
 h1 { text-shadow: 2px 2px 5px #a0a0a0; }
 h2 { text-shadow: 2px 2px 5px #a0a0a0; }
 
-#content { padding: 10px 5px; }
+#content { padding: 10px 5px 40px 5px; }
 #loglines { }
 #loglines .logline { }
-#loglines .logline:hover { background: #e0e0e; }
+#loglines .logline:focus, #loglines .logline:hover { background: #e0e0e0; }
 #loglines .logline .loglinenumber { color: #505050; font-size: 0.9em; min-width: 40px; float: left; }
 #loglines .logline .loglinecontent { }
+#loglines .logline .loglinecontent .removed { color: #a00000; }
 #footer { background: #b0b0ff; padding: 2px 5px; font-size: 0.9em; }
 /* Sticky footer on bottom of page */
 #footer { position: fixed; left: 0; bottom: 0; width: 100%; }
