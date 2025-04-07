@@ -23,13 +23,15 @@ h2 { text-shadow: 2px 2px 5px #a0a0a0; }
 #loglines { }
 #loglines .logline { }
 #loglines .logline:focus, #loglines .logline:hover { background: #e0e0e0; }
-#loglines .logline .loglinenumber { color: #505050; font-size: 0.9em; min-width: 40px; float: left; }
+#loglines .logline .loglinenumber { min-width: 40px; float: left; }
 #loglines .logline .loglinecontent { }
 #loglines .logline .loglinecontent .removed { color: #b00000; }
 #loglines .logline .loglinecontent .authentication_failed { color: #b00000; }
 #footer { background: #b0b0ff; padding: 2px 5px; font-size: 0.9em; }
 /* Sticky footer on bottom of page */
 #footer { position: fixed; left: 0; bottom: 0; width: 100%; }
+
+.info { font-size: 0.9em; color: #505050; }
 
 @media screen and (max-width: 1700px) {
   html { font-size: 14px; }
