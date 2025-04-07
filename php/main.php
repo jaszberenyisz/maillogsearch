@@ -8,7 +8,7 @@
   <div class="col">
     <form action="?" method="post" enctype="multipart/form-data">
       <input type="text" name="q" id="q" placeholder="'._search.'" value="'.$q.'" />
-      <input type="Submit" value="OK" />
+      <input type="Submit" value="'._OK.'" />
     </form>
   </div><!-- class:col -->
   <div class="col-3 info">
