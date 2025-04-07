@@ -11,7 +11,11 @@
     <link href="system/style.css?'.filemtime("system/style.css").'" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    '.$tartalom.'
+    <div id="pname">mail.log search</div>
+    <div id="content">
+      '.$body.'
+    </div>
+    <div id="footer">mail.log search by Szabolcs Jászberényi</div>
   </body>
 </html>
 ';
