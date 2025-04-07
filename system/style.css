@@ -21,6 +21,8 @@ h2 { text-shadow: 2px 2px 5px #a0a0a0; }
 
 #content { padding: 10px 0; }
 #footer { background: #b0b0ff; padding: 2px 5px; font-size: 0.9em; }
+/* Sticky footer on bottom of page */
+#footer { position: fixed; left: 0; bottom: 0; width: 100%; }
 
 @media screen and (max-width: 1700px) {
   html { font-size: 14px; }
