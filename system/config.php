@@ -4,6 +4,9 @@
   $_SESSION["cfg"]["logdir"]="/var/log/";
   // Default mail.log file name
   // Default: mail.log
-  $_SESSION["cfg"]["logfilename"]="mail.log";
+  // you can specify more than one filename on the same location
+  // Or leave the logdir parameter empty and use full path filenames instead
+//  $_SESSION["cfg"]["logfilename"]="mail.log";
+  $_SESSION["cfg"]["logfilename"]=array("mail.log.1","mail.log");
 ?>
 
