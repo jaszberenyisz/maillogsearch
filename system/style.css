@@ -1,1 +1,30 @@
+/*
+  mail.log search
+  by Szabolcs Jászberényi <info at jszabolcs dot hu>
+  created in 2025
+*/
+* { margin: none; }
+html { font-family: Arial,Helvetica Neue,Helvetica,sans-serif; font-size: 16px; height: 100%; width: 100%; margin: none; padding: none; }
+body {
+  background: #ffffff;
+  font-size: 100%;
+  height: 100%;
+  width: 100%;
+}
+a:link, a:active, a:visited { color: #0000ff; }
+a:focus, a:hover { color: #ff0000; }
+div { margin: auto; }
+input, select, textarea { background: #d0d0d0; border: 1px solid #606060; border-radius: 3px; color: #000000; }
+input:focus, input:hover, select:focus, select:hover, textarea:focus, textarea:hover { background: #909090; border: 1px solid #000000; }
+h1 { text-shadow: 2px 2px 5px #a0a0a0; }
+h2 { text-shadow: 2px 2px 5px #a0a0a0; }
 
+#content { padding: 10px 0; }
+#footer { background: #b0b0ff; padding: 2px 5px; font-size: 0.9em; }
+
+@media screen and (max-width: 1700px) {
+  html { font-size: 14px; }
+}
+@media screen and (max-width: 600px) {
+  div.snmp { display: table-cell !important; }
+}
