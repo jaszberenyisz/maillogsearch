@@ -11,7 +11,7 @@
     <link href="system/style.css?'.filemtime("system/style.css").'" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="pname">mail.log search</div>
+    <div id="pname"><h1>mail.log search</h1></div>
     <div id="content">
       '.$body.'
     </div>
