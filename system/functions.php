@@ -36,7 +36,7 @@ function get_logfile($fn,$q,$c=array())
 // Output: HTML formatted content
 function make_links($c)
 {
-//  $c=preg_replace('/]: ([A-Z0-9][^:]+)\: /', ']: <a href="?q=$1">$1</a>: ', $c);
+  $c=preg_replace('/]\: ([A-Z0-9]{10})\:/', ']: <a href="?q=$1">$1</a>: ', $c);
   $c=preg_replace('/queued as (.*)\)/', 'queued as <a href="?q=$1">$1</a>)', $c);
   $c=preg_replace('/forwarded as (.*)\)/', 'forwarded as <a href="?q=$1">$1</a>)', $c);
   $c=preg_replace('/to=\&lt\;([^\&]*)/', 'to=&lt;<a href="?q=$1">$1</a>', $c);
