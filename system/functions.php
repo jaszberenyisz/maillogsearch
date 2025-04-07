@@ -1,7 +1,11 @@
 <?php
 // --------------------------------------------------------------------
 // Get contents of lofile with filtering
-function get_logfile($fn,$q)
+// fn = filename
+// q = search query
+// c = content from a previous search to expand with new file
+// output: content of merged input content and filtered actual file content
+function get_logfile($fn,$q,$c=array())
 {
   global $out;
   if (file_exists($fn))
@@ -11,10 +15,9 @@ function get_logfile($fn,$q)
     $f=fopen($fn,"r");
     if ($f)
     {
-      $c=array();
       while (($line = fgets($f)) !== false)
       {
-        if (isset($q))
+        if (strlen(trim($q))>0)
         {
           if (strstr($line,$q)==true) $c[]=$line;
         }
@@ -25,6 +28,21 @@ function get_logfile($fn,$q)
     else $out.=' <p>Error reading file: '.$fn."</p>\n";
   }
   else $out.='<p>File does not exists: '.$fn.'</p>';
+  return $c;
+}
+// --------------------------------------------------------------------
+// Replace mail IDs with query links for better user experience
+// c = log line content
+// Output: HTML formatted content
+function make_links($c)
+{
+//  $c=preg_replace('/]: ([A-Z0-9][^:]+)\: /', ']: <a href="?q=$1">$1</a>: ', $c);
+  $c=preg_replace('/queued as (.*)\)/', 'queued as <a href="?q=$1">$1</a>)', $c);
+  $c=preg_replace('/forwarded as (.*)\)/', 'forwarded as <a href="?q=$1">$1</a>)', $c);
+  $c=preg_replace('/to=\&lt\;([^\&]*)/', 'to=&lt;<a href="?q=$1">$1</a>', $c);
+  $c=preg_replace('/from=\&lt\;([^\&]*)/', 'from=&lt;<a href="?q=$1">$1</a>', $c);
+  $c=preg_replace('/removed/', '<span class="removed">removed</span>', $c);
+  $c=preg_replace('/authentication failed: /', '<span class="authentication_failed">authentication failed</span>: ', $c);
   return $c;
 }
 // --------------------------------------------------------------------
