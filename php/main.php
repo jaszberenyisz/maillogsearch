@@ -20,11 +20,11 @@
   }
   else
   {
-    $c="";
+    $c=array();
     for ($i=0;$i<count($_SESSION["cfg"]["logfilename"]);$i++)
     {
       $fn=$_SESSION["cfg"]["logdir"].$_SESSION["cfg"]["logfilename"][$i];
-      $c.=get_logfile($fn,$q);
+      $c=get_logfile($fn,$q,$c);
     }
   }
 
@@ -34,9 +34,10 @@
     $out.='<div id="loglines">'."\n";
     for ($i=0;$i<count($c);$i++)
     {
+      $ctxt=make_links($c[$i]);
       $out.='
   <div class="logline row">
-    <div class="loglinecontent col"><div class="loglinenumber">'.(int)($i+1).'</div> '.$c[$i].'</div>
+    <div class="loglinecontent col"><div class="loglinenumber">'.(int)($i+1).'</div> '.$ctxt.'</div>
   </div><!-- class: logline -->
 ';
     }
