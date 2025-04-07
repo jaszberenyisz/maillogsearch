@@ -13,8 +13,20 @@
 </div>
 ';
 // Log reading and filtering
-  $fn=$_SESSION["cfg"]["logdir"].$_SESSION["cfg"]["logfilename"];
-  $c=get_logfile($fn,$q);
+  if (!is_array($_SESSION["cfg"]["logfilename"]))
+  {
+    $fn=$_SESSION["cfg"]["logdir"].$_SESSION["cfg"]["logfilename"];
+    $c=get_logfile($fn,$q);
+  }
+  else
+  {
+    $c="";
+    for ($i=0;$i<count($_SESSION["cfg"]["logfilename"]);$i++)
+    {
+      $fn=$_SESSION["cfg"]["logdir"].$_SESSION["cfg"]["logfilename"][$i];
+      $c.=get_logfile($fn,$q);
+    }
+  }
 
   // Print lines;
   if (count($c)>0)
