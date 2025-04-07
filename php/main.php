@@ -4,6 +4,11 @@
     $q=$_POST["q"];
     if (strlen($q)<=1) unset($q);
   }
+  elseif (isset($_GET["q"]))
+  {
+    $q=$_GET["q"];
+    if (strlen($q)<=1) unset($q);
+  }
   else $q="";
   $out.='
 <div id="control">
