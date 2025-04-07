@@ -25,6 +25,10 @@ h2 { text-shadow: 2px 2px 5px #a0a0a0; }
 #loglines .logline:focus, #loglines .logline:hover { background: #e0e0e0; }
 #loglines .logline .loglinenumber { min-width: 40px; float: left; }
 #loglines .logline .loglinecontent { }
+/* OK messages */
+#loglines .logline .loglinecontent .passed_clean { color: #00b000; }
+#loglines .logline .loglinecontent .message_250_ok { color: #00b000; }
+/* ERROR messages */
 #loglines .logline .loglinecontent .removed { color: #b00000; }
 #loglines .logline .loglinecontent .authentication_failed { color: #b00000; }
 #footer { background: #b0b0ff; padding: 2px 5px; font-size: 0.9em; }
