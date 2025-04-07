@@ -35,7 +35,7 @@
     {
       $ctxt=$c[$i];
       $ctxt=htmlspecialchars($ctxt);
-      $ctxt=make_links($c[$i]);
+      $ctxt=make_links($ctxt);
       $out.='
   <div class="logline row">
     <div class="loglinecontent col"><div class="loglinenumber">'.(int)($i+1).'</div> '.$ctxt.'</div>
