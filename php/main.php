@@ -4,6 +4,7 @@
     $q=$_POST["q"];
     if (strlen($q)<=1) unset($q);
   }
+  else $q="";
   $out.='
 <div id="control">
   <form action="?" method="post" enctype="multipart/form-data">
@@ -34,7 +35,7 @@
     $out.='<div id="loglines">'."\n";
     for ($i=0;$i<count($c);$i++)
     {
-      $ctxt=make_links($c[$i]);
+      $ctxt=htmlspecialchars(make_links($c[$i]));
       $out.='
   <div class="logline row">
     <div class="loglinecontent col"><div class="loglinenumber">'.(int)($i+1).'</div> '.$ctxt.'</div>
