@@ -14,38 +14,20 @@
 ';
 // Log reading and filtering
   $fn=$_SESSION["cfg"]["logdir"].$_SESSION["cfg"]["logfilename"];
-  if (file_exists($fn))
+  $c=get_logfile($fn,$q);
+
+  // Print lines;
+  if (count($c)>0)
   {
-    $out.='<p>Log file: '.$fn."</p>\n";
-    $f=fopen($fn,"r");
-    if ($f)
+    $out.='<div id="loglines">'."\n";
+    for ($i=0;$i<count($c);$i++)
     {
-      $c=array();
-      while (($line = fgets($f)) !== false)
-      {
-        if (isset($q))
-        {
-          if (strstr($line,$q)==true) $c[]=$line;
-        }
-        else $c[]=$line;
-      }
-      fclose($f);
-      // Print lines;
-      if (count($c)>0)
-      {
-        $out.='<div id="loglines">'."\n";
-        for ($i=0;$i<count($c);$i++)
-        {
-          $out.='
+      $out.='
   <div class="logline row">
     <div class="loglinecontent col"><div class="loglinenumber">'.(int)($i+1).'</div> '.$c[$i].'</div>
   </div><!-- class: logline -->
 ';
-        }
-        $out.="</div>\n";
-      }
     }
-    else $out.=' <p>Error reading file: '.$fn."</p>\n";
+    $out.="</div>\n";
   }
-  else $out.='<p>File does not exists: '.$fn.'</p>';
 ?>
