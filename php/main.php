@@ -4,11 +4,16 @@
   elseif (isset($_GET["q"])) $q=$_GET["q"];
   if (strlen($q)<=1) $q="";
   $out.='
-<div id="control">
-  <form action="?" method="post" enctype="multipart/form-data">
-    <input type="text" name="q" id="q" placeholder="Keresés..." value="'.$q.'" />
-    <input type="Submit" value="OK" />
-  </form>
+<div id="control" class="row w-50">
+  <div class="col">
+    <form action="?" method="post" enctype="multipart/form-data">
+      <input type="text" name="q" id="q" placeholder="Keresés..." value="'.$q.'" />
+      <input type="Submit" value="OK" />
+    </form>
+  </div><!-- class:col -->
+  <div class="col-3 info">
+    '.(int)$_SESSION["cfg"]["maxlines"].' sort mutat.
+  </div><!-- class:col -->
 </div>
 ';
 // Log reading and filtering
@@ -40,7 +45,7 @@
       $ctxt=make_links($ctxt);
       $out.='
   <div class="logline row">
-    <div class="loglinecontent col"><div class="loglinenumber">'.(int)($i+1).'</div> '.$ctxt.'</div>
+    <div class="loglinecontent col"><div class="loglinenumber info">'.(int)($i+1).'</div> '.$ctxt.'</div>
   </div><!-- class: logline -->
 ';
     }
