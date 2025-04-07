@@ -2,12 +2,12 @@
   if (isset($_POST["q"]))
   {
     $q=$_POST["q"];
-    if (strlen($q)<=1) unset($q);
+    if (strlen($q)<=1) $q="";
   }
   elseif (isset($_GET["q"]))
   {
     $q=$_GET["q"];
-    if (strlen($q)<=1) unset($q);
+    if (strlen($q)<=1) $q="";
   }
   else $q="";
   $out.='
