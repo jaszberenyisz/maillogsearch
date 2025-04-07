@@ -36,11 +36,18 @@ function get_logfile($fn,$q,$c=array())
 // Output: HTML formatted content
 function make_links($c)
 {
+  // E-mail IDs
   $c=preg_replace('/]\: ([A-Z0-9]{10})\:/', ']: <a href="?q=$1">$1</a>: ', $c);
+  // queue as IDs
   $c=preg_replace('/queued as (.*)\)/', 'queued as <a href="?q=$1">$1</a>)', $c);
+  // forward as IDs
   $c=preg_replace('/forwarded as (.*)\)/', 'forwarded as <a href="?q=$1">$1</a>)', $c);
-  $c=preg_replace('/to=\&lt\;([^\&]*)/', 'to=&lt;<a href="?q=$1">$1</a>', $c);
-  $c=preg_replace('/from=\&lt\;([^\&]*)/', 'from=&lt;<a href="?q=$1">$1</a>', $c);
+  // E-mail addresses
+  $c=preg_replace('/\&lt\;([^\&]*)/', '&lt;<a href="?q=$1">$1</a>', $c);
+  // Normal status
+  $c=preg_replace('/Passed CLEAN/', '<span class="passed_clean">Passed CLEAN</span>', $c);
+  $c=preg_replace('/250 2\.0\.0 Ok/', '<span class="message_250_ok">250 2.0.0 Ok</span>', $c);
+  // Error status
   $c=preg_replace('/removed/', '<span class="removed">removed</span>', $c);
   $c=preg_replace('/authentication failed: /', '<span class="authentication_failed">authentication failed</span>: ', $c);
   return $c;
