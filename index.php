@@ -1,7 +1,7 @@
 <?php
 /*
   mail.log search
-  by SZabolcs Jászberényi
+  by Szabolcs Jászberényi <info at jszabolcs dot hu>
   created in 2025
 
   mail.log search is a web based tool to make searching in mail.log files easier.
