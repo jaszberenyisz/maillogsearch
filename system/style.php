@@ -17,6 +17,7 @@
       '.$body.'
     </div>
     <div id="footer">mail.log search by Szabolcs Jászberényi</div>
+    <script href="lib/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
   </body>
 </html>
 ';
