@@ -6,7 +6,8 @@ function get_logfile($fn,$q)
   global $out;
   if (file_exists($fn))
   {
-    $out.='<p>Log file: '.$fn."</p>\n";
+// Debugging purposes...
+//    $out.='<p>Log file: '.$fn."</p>\n";
     $f=fopen($fn,"r");
     if ($f)
     {
