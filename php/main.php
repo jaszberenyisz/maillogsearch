@@ -1,15 +1,8 @@
 <?php
-  if (isset($_POST["q"]))
-  {
-    $q=$_POST["q"];
-    if (strlen($q)<=1) $q="";
-  }
-  elseif (isset($_GET["q"]))
-  {
-    $q=$_GET["q"];
-    if (strlen($q)<=1) $q="";
-  }
-  else $q="";
+  $q="";
+  if (isset($_POST["q"])) $q=$_POST["q"];
+  elseif (isset($_GET["q"])) $q=$_GET["q"];
+  if (strlen($q)<=1) $q="";
   $out.='
 <div id="control">
   <form action="?" method="post" enctype="multipart/form-data">
