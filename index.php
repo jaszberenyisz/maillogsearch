@@ -9,6 +9,7 @@
   require_once("system/config.php") || die("No configuration (system/config.php) present!");
   require_once("system/functions.php") || die("Missing required system files (system/functions.php)!");
   require_once("system/action.php") || die("Missing required system files (system/action.php)!");
+  $out="";
   require_once("system/style.php") || die("Missing required system files (system/style.php)!");
+  print($out);
 ?>
-
