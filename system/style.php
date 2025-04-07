@@ -8,7 +8,7 @@
     <meta name="copyright" content="Készítette: Jászberényi Szabolcs" />
     <meta name="robots" content="all" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="system/style.css?<?=filemtime("system/style.css"); ?>" rel="stylesheet" type="text/css" />
+    <link href="system/style.css?'.filemtime("system/style.css").'" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div>
