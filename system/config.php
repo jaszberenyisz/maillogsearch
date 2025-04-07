@@ -14,5 +14,8 @@
   // 0 means no limit
   // Be carefull with no limit as it can consume a huge amount of memory on the client side too!
   $_SESSION["cfg"]["maxlines"]="1000";
-?>
 
+  // Language selection
+  // Default: english (en)
+  $_SESSION["cfg"]["language"]="en";
+?>
