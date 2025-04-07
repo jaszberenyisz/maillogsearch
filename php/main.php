@@ -4,18 +4,12 @@
   if (isset($_POST["q"])) $q=$_POST["q"];
   elseif (isset($_GET["q"])) $q=$_GET["q"];
   if (strlen($q)<=1) $q="";
-  // Second filter
-  $q2="";
-  if (isset($_POST["q2"])) $q2=$_POST["q2"];
-  elseif (isset($_GET["q2"])) $q2=$_GET["q2"];
-  if (strlen($q2)<=1) $q2="";
   // Search form
   $out.='
 <div id="control" class="row w-50">
   <div class="col">
     <form action="?" method="post" enctype="multipart/form-data">
       <input type="text" name="q" id="q" placeholder="'._search.'" value="'.$q.'" />
-      <input type="text" name="q2" id="q2" placeholder="'._search.'" value="'.$q2.'" />
       <input type="Submit" value="'._OK.'" />
     </form>
   </div><!-- class:col -->
