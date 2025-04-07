@@ -31,7 +31,9 @@
   if (count($c)>0)
   {
     $out.='<div id="loglines">'."\n";
-    for ($i=0;$i<count($c);$i++)
+    $maxlines=count($c);
+    if (((int)$_SESSION["cfg"]["maxlines"]>0)and($maxlines>(int)$_SESSION["cfg"]["maxlines"])) $maxlines=(int)$_SESSION["cfg"]["maxlines"];
+    for ($i=0;$i<$maxlines;$i++)
     {
       $ctxt=$c[$i];
       $ctxt=htmlspecialchars($ctxt);
