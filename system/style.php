@@ -11,8 +11,7 @@
     <link href="system/style.css?'.filemtime("system/style.css").'" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div>
-    </div>
+    '.$tartalom.'
   </body>
 </html>
 ';
