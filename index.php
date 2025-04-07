@@ -14,7 +14,7 @@
   $out="";
   if (file_exists("php/".$fn))
   {
-    require_once("php/".$fn));
+    require_once("php/".$fn);
     $body=$out;
   }
   else die("Missing required system files (php/".$fn.")!");
