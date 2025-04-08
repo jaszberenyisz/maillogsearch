@@ -1,4 +1,22 @@
 <?php
+// Prints a logline
+// ln = line number
+// txt = text to print (aka logline)
+// No output
+function print_line($ln,$txt)
+{
+  global $out;
+  // Some formating
+  $txt=htmlspecialchars($txt);
+  $txt=make_links($txt);
+  // Print
+  $out.='
+  <div class="logline row">
+    <div class="loglinecontent col"><div class="loglinenumber info">'.(int)$ln.'</div> '.$txt.'</div>
+  </div><!-- class: logline -->
+';
+}
+
   // First filter
   $q="";
   if (isset($_POST["q"])) $q=$_POST["q"];
@@ -50,19 +68,7 @@
     $maxlines=count($c);
     if (((int)$_SESSION["cfg"]["maxlines"]>0)and($maxlines>(int)$_SESSION["cfg"]["maxlines"])) $maxlines=(int)$_SESSION["cfg"]["maxlines"];
     // Lets print them
-    for ($i=0;$i<$maxlines;$i++)
-    {
-      // Some formating
-      $ctxt=$c[$i];
-      $ctxt=htmlspecialchars($ctxt);
-      $ctxt=make_links($ctxt);
-      // Print
-      $out.='
-  <div class="logline row">
-    <div class="loglinecontent col"><div class="loglinenumber info">'.(int)($i+1).'</div> '.$ctxt.'</div>
-  </div><!-- class: logline -->
-';
-    }
+    for ($i=0;$i<$maxlines;$i++) print_line(($i+1),$c[$i]);
     $out.="</div>\n";
   }
 // Set focus on search field for ease of use
