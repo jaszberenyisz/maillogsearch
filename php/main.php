@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-6">
         <form action="?" method="post" enctype="multipart/form-data">
-          <input type="text" name="q" id="q" placeholder="'._search.'" value="'.$q.'" />
+          <input type="text" name="q" id="q" placeholder="'._search.'" value="'.$q.'" autofocus />
           <input type="Submit" value="'._OK.'" />
         </form>
       </div><!-- class:col -->
@@ -65,4 +65,12 @@
     }
     $out.="</div>\n";
   }
+// Set focus on search field for ease of use
+/*
+  $out.='
+<script type="text/javascript"><!--
+  document.getElementById("q").focus();
+// --></script>
+';
+*/
 ?>
