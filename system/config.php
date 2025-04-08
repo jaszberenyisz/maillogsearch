@@ -1,4 +1,8 @@
 <?php
+  // Title of screen and logo text
+  // Default: mail.log search
+  $_SESSION["cfg"]["title"]="mail.log search";
+
   // Log files directory
   // Default: /var/log/
   $_SESSION["cfg"]["logdir"]="/var/log/";
