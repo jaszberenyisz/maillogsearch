@@ -35,8 +35,12 @@ function print_line($ln,$txt)
         <form action="?" method="post" enctype="multipart/form-data">
           <input type="text" name="q" id="q" placeholder="'._search.'" value="'.$q.'" autofocus />
           <select name="order" id="order">
-            <option value="0">'._newest_on_top.'</option>
-            <option value="1">'._oldest_on_top.'</option>
+            <option value="0"';
+  if ($_SESSION["order"]=="0") $out.=' selected="selected"';
+  $out.='>'._newest_on_top.'</option>
+            <option value="1"';
+  if ($_SESSION["order"]=="1") $out.=' selected="selected"';
+  $out.='>'._oldest_on_top.'</option>
           </select>
           <input type="Submit" value="'._OK.'" />
         </form>
