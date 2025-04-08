@@ -71,12 +71,4 @@ function print_line($ln,$txt)
     for ($i=0;$i<$maxlines;$i++) print_line(($i+1),$c[$i]);
     $out.="</div>\n";
   }
-// Set focus on search field for ease of use
-/*
-  $out.='
-<script type="text/javascript"><!--
-  document.getElementById("q").focus();
-// --></script>
-';
-*/
 ?>
