@@ -7,6 +7,7 @@
   // Search form
   $out.='
 <div id="control" class="row w-50">
+  <div id="pname" class="col-lg-4 col-6"><h1>'.$_SESSION["cfg"]["title"].'</h1></div>
   <div class="col">
     <form action="?" method="post" enctype="multipart/form-data">
       <input type="text" name="q" id="q" placeholder="'._search.'" value="'.$q.'" />
