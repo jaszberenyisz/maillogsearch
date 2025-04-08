@@ -22,15 +22,22 @@ function print_line($ln,$txt)
   if (isset($_POST["q"])) $q=$_POST["q"];
   elseif (isset($_GET["q"])) $q=$_GET["q"];
   if (strlen($q)<=1) $q="";
+  // Order to permanent
+  if (!isset($_SESSION["order"])) $_SESSION["order"]=0;
+  if (isset($_POST["order"])) $_SESSION["order"]=$_POST["order"];
   // Search form
   $out.='
 <div id="control" class="row w-50">
   <div id="pname" class="col-lg-4 col-6"><h1>'.$_SESSION["cfg"]["title"].'</h1></div>
   <div class="col pt-3">
     <div class="row">
-      <div class="col-6">
+      <div class="col-8">
         <form action="?" method="post" enctype="multipart/form-data">
           <input type="text" name="q" id="q" placeholder="'._search.'" value="'.$q.'" autofocus />
+          <select name="order" id="order">
+            <option value="0">'._newest_on_top.'</option>
+            <option value="1">'._oldest_on_top.'</option>
+          </select>
           <input type="Submit" value="'._OK.'" />
         </form>
       </div><!-- class:col -->
@@ -65,10 +72,23 @@ function print_line($ln,$txt)
   {
     $out.='<div id="loglines">'."\n";
     // Maximalize output lines
-    $maxlines=count($c);
-    if (((int)$_SESSION["cfg"]["maxlines"]>0)and($maxlines>(int)$_SESSION["cfg"]["maxlines"])) $maxlines=(int)$_SESSION["cfg"]["maxlines"];
+    $totallines=count($c);
+    if (((int)$_SESSION["cfg"]["maxlines"]>0)and($totallines>(int)$_SESSION["cfg"]["maxlines"])) $maxlines=(int)$_SESSION["cfg"]["maxlines"];
+    else $maxlines=$totallines;
     // Lets print them
-    for ($i=0;$i<$maxlines;$i++) print_line(($i+1),$c[$i]);
+    $ln=0;
+    $all=$totallines-$maxlines;
+    if ($all<=0) $all=1;
+    if ($_SESSION["order"]=="0")
+    {
+      // Order by date: newest on top
+      for ($i=($totallines-1);$i>=$all;$i--) { $ln++; print_line($ln,$c[$i]); }
+    }
+    else
+    {
+      // Order by date: oldest on top
+      for ($i=($all-1);$i<$totallines;$i++) { $ln++; print_line($ln,$c[$i]); }
+    }
     $out.="</div>\n";
   }
 ?>
