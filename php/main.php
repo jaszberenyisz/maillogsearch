@@ -17,7 +17,7 @@
         </form>
       </div><!-- class:col -->
       <div class="col pt-1 info">
-        '.(int)$_SESSION["cfg"]["maxlines"].' sort mutat.
+        '.(int)$_SESSION["cfg"]["maxlines"].' '._lines_shown.'.
       </div><!-- class:col -->
     </div><!-- class:row -->
   </div><!-- class:col -->
