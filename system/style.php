@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>mail.log search</title>
+    <title>'.$_SESSION["cfg"]["title"].'</title>
     <meta name="author" content="Jászberényi Szabolcs" />
     <meta name="copyright" content="Készítette: Jászberényi Szabolcs" />
     <meta name="robots" content="all" />
