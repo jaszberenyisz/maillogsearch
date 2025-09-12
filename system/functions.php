@@ -40,6 +40,7 @@ function make_links($c)
   $c=preg_replace('/]\: ([A-Z0-9]{10})\:/', ']: <a href="?q=$1">$1</a>: ', $c);
   // queue as IDs
   $c=preg_replace('/queued as ([A-Z0-9]{10})/', 'queued as <a href="?q=$1">$1</a>', $c);
+  $c=preg_replace('/queued_as: ([A-Z0-9]{10}),/', 'queued_as: <a href="?q=$1">$1</a>,', $c);
   // forward as IDs
   $c=preg_replace('/forwarded as ([A-Z0-9]{10})/', 'forwarded as <a href="?q=$1">$1</a>', $c);
   // E-mail addresses
@@ -53,6 +54,10 @@ function make_links($c)
   $c=preg_replace('/removed/', '<span class="msg_red">removed</span>', $c);
   $c=preg_replace('/SSL_accept error from /', '<span class="msg_red">SSL_accept error</span> from ', $c);
   $c=preg_replace('/unknown user: /', '<span class="msg_red">unknown user</span>: ', $c);
+  $c=preg_replace('/failed: Permission denied/', '<span class="msg_red">failed: Permission denied</span>', $c);
+  $c=preg_replace('/ URIBL_BLOCKED /', '<span class="msg_red">URIBL_BLOCKED</span> ', $c);
+  $c=preg_replace('/temporarily deferred/', '<span class="msg_red">temporarily deferred</span>', $c);
+  $c=preg_replace('/key retrieval failed/', '<span class="msg_red"> key retrieval failed</span>', $c);
   return $c;
 }
 // --------------------------------------------------------------------
