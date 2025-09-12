@@ -26,9 +26,18 @@ h2 { text-shadow: 2px 2px 5px #a0a0a0; }
 #loglines .logline .loglinenumber { min-width: 40px; float: left; }
 #loglines .logline .loglinecontent { }
 /* OK messages */
-#loglines .logline .loglinecontent .msg_green { color: #00a000; }
+#loglines .logline .loglinecontent .msg_normal { color: #00a000; }
+#loglines .logline:hover .loglinecontent .msg_normal { color: #000000; }
+#loglines .logline:has(.loglinecontent .msg_normal):hover { background: #e0ffe0; }
+/* Warning messages */
+#loglines .logline .loglinecontent .msg_warning { color: #ff9000; }
+#loglines .logline:hover .loglinecontent .msg_warning { color: #000000; }
+#loglines .logline:has(.loglinecontent .msg_warning):hover { background: #ffe0c0; }
 /* ERROR messages */
-#loglines .logline .loglinecontent .msg_red { color: #d00000; }
+#loglines .logline .loglinecontent .msg_error { color: #d00000; }
+#loglines .logline:hover .loglinecontent .msg_error { color: #000000; }
+#loglines .logline:has(.loglinecontent .msg_error):hover { background: #ffe0e0; }
+/* Footer */
 #footer { background: #b0b0ff; padding: 2px 5px; font-size: 0.9em; }
 /* Sticky footer on bottom of page */
 #footer { position: fixed; left: 0; bottom: 0; width: 100%; }
@@ -41,3 +50,4 @@ h2 { text-shadow: 2px 2px 5px #a0a0a0; }
 @media screen and (max-width: 600px) {
   div.snmp { display: table-cell !important; }
 }
+
