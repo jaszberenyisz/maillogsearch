@@ -45,19 +45,22 @@ function make_links($c)
   $c=preg_replace('/forwarded as ([A-Z0-9]{10})/', 'forwarded as <a href="?q=$1">$1</a>', $c);
   // E-mail addresses
   $c=preg_replace('/\&lt\;([^\&]*)/', '&lt;<a href="?q=$1">$1</a>', $c);
-  // Normal status
-  $c=preg_replace('/Passed CLEAN/', '<span class="msg_green">Passed CLEAN</span>', $c);
-  $c=preg_replace('/250 2\.0\.0 Ok/', '<span class="msg_green">250 2.0.0 Ok</span>', $c);
-  // Error status
-  $c=preg_replace('/authentication failed: /', '<span class="msg_red">authentication failed</span>: ', $c);
-  $c=preg_replace('/lost connection after /', '<span class="msg_red">lost connection</span> after ', $c);
-  $c=preg_replace('/removed/', '<span class="msg_red">removed</span>', $c);
-  $c=preg_replace('/SSL_accept error from /', '<span class="msg_red">SSL_accept error</span> from ', $c);
-  $c=preg_replace('/unknown user: /', '<span class="msg_red">unknown user</span>: ', $c);
-  $c=preg_replace('/failed: Permission denied/', '<span class="msg_red">failed: Permission denied</span>', $c);
-  $c=preg_replace('/ URIBL_BLOCKED /', '<span class="msg_red">URIBL_BLOCKED</span> ', $c);
-  $c=preg_replace('/temporarily deferred/', '<span class="msg_red">temporarily deferred</span>', $c);
-  $c=preg_replace('/key retrieval failed/', '<span class="msg_red"> key retrieval failed</span>', $c);
+  // Normal status/messages
+  $c=preg_replace('/Passed CLEAN/', '<span class="msg_normal">Passed CLEAN</span>', $c);
+  $c=preg_replace('/250 2\.0\.0 Ok/', '<span class="msg_normal">250 2.0.0 Ok</span>', $c);
+  // Warning status/messages
+  $c=preg_replace('/warning:/', '<span class="msg_warning">warning</span>:', $c);
+  $c=preg_replace('/_WARN:/', '<span class="msg_warning">_WARN</span>:', $c);
+  // Error status/messages
+  $c=preg_replace('/authentication failed: /', '<span class="msg_error">authentication failed</span>: ', $c);
+  $c=preg_replace('/lost connection after /', '<span class="msg_error">lost connection</span> after ', $c);
+  $c=preg_replace('/removed/', '<span class="msg_error">removed</span>', $c);
+  $c=preg_replace('/SSL_accept error from /', '<span class="msg_error">SSL_accept error</span> from ', $c);
+  $c=preg_replace('/unknown user: /', '<span class="msg_error">unknown user</span>: ', $c);
+  $c=preg_replace('/failed: Permission denied/', '<span class="msg_error">failed: Permission denied</span>', $c);
+  $c=preg_replace('/ URIBL_BLOCKED /', ' <span class="msg_error">URIBL_BLOCKED</span> ', $c);
+  $c=preg_replace('/temporarily deferred/', '<span class="msg_error">temporarily deferred</span>', $c);
+  $c=preg_replace('/key retrieval failed/', '<span class="msg_error"> key retrieval failed</span>', $c);
   return $c;
 }
 // --------------------------------------------------------------------
