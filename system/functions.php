@@ -53,19 +53,20 @@ function make_links($c)
   $c=preg_replace('/_WARN:/', '<span class="msg_warning">_WARN</span>:', $c);
   // Error status/messages
   $c=preg_replace('/authentication failed: /', '<span class="msg_error">authentication failed</span>: ', $c);
+  $c=preg_replace('/failed: Permission denied/', '<span class="msg_error">failed: Permission denied</span>', $c);
   $c=preg_replace('/lost connection after /', '<span class="msg_error">lost connection</span> after ', $c);
+  $c=preg_replace('/key retrieval failed/', '<span class="msg_error"> key retrieval failed</span>', $c);
   $c=preg_replace('/removed/', '<span class="msg_error">removed</span>', $c);
   $c=preg_replace('/SSL_accept error from /', '<span class="msg_error">SSL_accept error</span> from ', $c);
+  $c=preg_replace('/temporarily deferred/', '<span class="msg_error">temporarily deferred</span>', $c);
   $c=preg_replace('/unknown user: /', '<span class="msg_error">unknown user</span>: ', $c);
-  $c=preg_replace('/failed: Permission denied/', '<span class="msg_error">failed: Permission denied</span>', $c);
   $c=preg_replace('/ NOQUEUE: reject/', ' <span class="msg_error">NOQUEUE: reject</span>', $c);
   $c=preg_replace('/ URIBL_BLOCKED /', ' <span class="msg_error">URIBL_BLOCKED</span> ', $c);
   $c=preg_replace('/ RCVD_IN_DNSWL_BLOCKED /', ' <span class="msg_error">RCVD_IN_DNSWL_BLOCKED</span> ', $c);
   $c=preg_replace('/ RCVD_IN_VALIDITY_CERTIFIED_BLOCKED /', ' <span class="msg_error">RCVD_IN_VALIDITY_CERTIFIED_BLOCKED</span> ', $c);
   $c=preg_replace('/ RCVD_IN_VALIDITY_RPBL_BLOCKED /', ' <span class="msg_error">RCVD_IN_VALIDITY_RPBL_BLOCKED</span> ', $c);
   $c=preg_replace('/ RCVD_IN_VALIDITY_SAFE_BLOCKED /', ' <span class="msg_error">RCVD_IN_VALIDITY_SAFE_BLOCKED</span> ', $c);
-  $c=preg_replace('/temporarily deferred/', '<span class="msg_error">temporarily deferred</span>', $c);
-  $c=preg_replace('/key retrieval failed/', '<span class="msg_error"> key retrieval failed</span>', $c);
+  $c=preg_replace('/ RCVD_IN_ZEN_BLOCKED_OPENDNS /', ' <span class="msg_error">RCVD_IN_ZEN_BLOCKED_OPENDNS</span> ', $c);
   return $c;
 }
 // --------------------------------------------------------------------
