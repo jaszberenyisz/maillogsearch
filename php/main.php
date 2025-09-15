@@ -29,7 +29,7 @@ function print_line($ln,$txt)
   // Search form
   $out.='
 <div id="control" class="row border-bottom">
-  <div id="pname" class="col-xl-3 col-md-4 col-12 text-md-start text-center ps-lg-5 px-3"><h1>'.$_SESSION["cfg"]["title"].'</h1></div>
+  <div id="pname" class="col-xl-3 col-md-4 col-12 text-md-start text-center ps-lg-5 px-3"><h1><a href="?">'.$_SESSION["cfg"]["title"].'</a></h1></div>
   <div class="col pt-3 text-lg-start text-center">
     <form action="?" method="post" enctype="multipart/form-data">
       <input type="text" name="q" id="q" placeholder="'._search.'" value="'.$q.'" autofocus class="w-50 " />
