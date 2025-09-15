@@ -1,2 +1,4 @@
-Passed CLEAN
 250 2.0.0 Ok
+Passed CLEAN
+Received-SPF: Pass
+ dsn=2.0.0
