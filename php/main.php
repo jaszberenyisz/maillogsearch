@@ -40,9 +40,26 @@ function print_line($ln,$txt)
   if ($_SESSION["order"]=="1") $out.=' selected="selected"';
   $out.='>'._oldest_on_top.'</option>
       </select>
-      <input type="Submit" value="'._OK.'" />
+      <input type="submit" value="'._OK.'" />
     </form>
-    <div class="info">'.(int)$_SESSION["cfg"]["maxlines"].' '._lines_shown.'.</div>
+';
+  if (count($_SESSION["cfg"]["keywords"])>0)
+  {
+    $out.='    <div id="quicksearch">
+      <span>'._quick_search.':</span>
+';
+    // Show maximum 10 keywords
+    $maxkeywords=count($_SESSION["cfg"]["keywords"]);
+    if ($maxkeywords>10) $maxkeywords=10;
+    for ($i=0;$i<$maxkeywords;$i++)
+    {
+      $keyword=stripslashes($_SESSION["cfg"]["keywords"][$i]);
+      $out.='<a href="?q='.$keyword.'" class="px-1">'.$keyword.'</a> ';
+    }
+  $out.='    </div><!-- id:quicksearch -->
+';
+  }
+  $out.='    <div class="info">'.(int)$_SESSION["cfg"]["maxlines"].' '._lines_shown.'.</div>
   </div><!-- class:col -->
 </div><!-- class:row -->
 ';
