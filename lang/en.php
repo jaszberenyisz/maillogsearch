@@ -9,4 +9,5 @@ created in 2025
   define("_OK","OK");
   define("_oldest_on_top","Oldest on top");
   define("_search","Search...");
+  define("_quick_search","Quick Search...");
 ?>
