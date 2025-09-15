@@ -27,28 +27,22 @@ function print_line($ln,$txt)
   if (isset($_POST["order"])) $_SESSION["order"]=$_POST["order"];
   // Search form
   $out.='
-<div id="control" class="row w-50">
-  <div id="pname" class="col-lg-4 col-6"><h1>'.$_SESSION["cfg"]["title"].'</h1></div>
-  <div class="col pt-3">
-    <div class="row">
-      <div class="col-8">
-        <form action="?" method="post" enctype="multipart/form-data">
-          <input type="text" name="q" id="q" placeholder="'._search.'" value="'.$q.'" autofocus />
-          <select name="order" id="order">
-            <option value="0"';
+<div id="control" class="row border-bottom">
+  <div id="pname" class="col-xl-3 col-md-4 col-12 text-md-start text-center ps-lg-5 px-3"><h1>'.$_SESSION["cfg"]["title"].'</h1></div>
+  <div class="col pt-3 text-lg-start text-center">
+    <form action="?" method="post" enctype="multipart/form-data">
+      <input type="text" name="q" id="q" placeholder="'._search.'" value="'.$q.'" autofocus class="w-50 " />
+      <select name="order" id="order">
+        <option value="0"';
   if ($_SESSION["order"]=="0") $out.=' selected="selected"';
   $out.='>'._newest_on_top.'</option>
-            <option value="1"';
+        <option value="1"';
   if ($_SESSION["order"]=="1") $out.=' selected="selected"';
   $out.='>'._oldest_on_top.'</option>
-          </select>
-          <input type="Submit" value="'._OK.'" />
-        </form>
-      </div><!-- class:col -->
-      <div class="col pt-1 info">
-        '.(int)$_SESSION["cfg"]["maxlines"].' '._lines_shown.'.
-      </div><!-- class:col -->
-    </div><!-- class:row -->
+      </select>
+      <input type="Submit" value="'._OK.'" />
+    </form>
+    <div class="info">'.(int)$_SESSION["cfg"]["maxlines"].' '._lines_shown.'.</div>
   </div><!-- class:col -->
 </div><!-- class:row -->
 ';
