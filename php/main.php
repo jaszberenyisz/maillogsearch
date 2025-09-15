@@ -9,6 +9,7 @@ function print_line($ln,$txt)
   // Some formating
   $txt=htmlspecialchars($txt);
   $txt=make_links($txt);
+  $txt=make_colors($txt);
   // Print
   $out.='
   <div class="logline row">
