@@ -31,6 +31,61 @@ function get_logfile($fn,$q,$c=array())
   return $c;
 }
 // --------------------------------------------------------------------
+// Colorize output based on status for better user experience
+// Text based files for storing statuses
+// c = log line content
+// Output: HTML formatted content
+function make_colors($c)
+{
+  // Normal status/messages
+  $c=make_colors_readfile($c,"system/status/normal.txt","msg_normal");
+  // Warning status/messages
+  $c=make_colors_readfile($c,"system/status/warning.txt","msg_warning");
+  // Error status/messages
+  $c=make_colors_readfile($c,"system/status/error.txt","msg_error");
+  return $c;
+}
+// --------------------------------------------------------------------
+// Add SPAN tags for colorizing
+// c     = Content
+// txt   = Text to find/replace
+// class = CSS class name
+// Output: HTML formatted content
+function make_colors_addclass($c,$txt,$class)
+{
+  if (substr($txt,-1)==":")
+  {
+    $txt1=substr($txt,0,strlen($txt)-1);
+    $txt2=":";
+  }
+  elseif (substr($txt,-2)==": ")
+  {
+    $txt1=substr($txt,0,strlen($txt)-2);
+    $txt2=": ";
+  }
+  else
+  {
+    $txt1=$txt;
+    $txt2="";
+  }
+  return preg_replace('/'.$txt.'/', '<span class="'.$class.'">'.$txt1.'</span>'.$txt2, $c);
+}
+// --------------------------------------------------------------------
+// Sub function for make_colors
+// Reads file line by line and calls make_colors_addclass() function with correct parameters
+// Output: make_colors_addclass() output
+function make_colors_readfile($c,$file,$class)
+{
+  $filecontent=file_get_contents($file);
+  $lines=explode("\n",$filecontent);
+  for ($i=0;$i<count($lines);$i++)
+  {
+    $txt=$lines[$i];
+    if ($txt) $c=make_colors_addclass($c,$txt,$class);
+  }
+  return $c;
+}
+// --------------------------------------------------------------------
 // Replace mail IDs with query links for better user experience
 // c = log line content
 // Output: HTML formatted content
@@ -45,28 +100,6 @@ function make_links($c)
   $c=preg_replace('/forwarded as ([A-Z0-9]{10})/', 'forwarded as <a href="?q=$1">$1</a>', $c);
   // E-mail addresses
   $c=preg_replace('/\&lt\;([^\&]*)/', '&lt;<a href="?q=$1">$1</a>', $c);
-  // Normal status/messages
-  $c=preg_replace('/Passed CLEAN/', '<span class="msg_normal">Passed CLEAN</span>', $c);
-  $c=preg_replace('/250 2\.0\.0 Ok/', '<span class="msg_normal">250 2.0.0 Ok</span>', $c);
-  // Warning status/messages
-  $c=preg_replace('/warning:/', '<span class="msg_warning">warning</span>:', $c);
-  $c=preg_replace('/_WARN:/', '<span class="msg_warning">_WARN</span>:', $c);
-  // Error status/messages
-  $c=preg_replace('/authentication failed: /', '<span class="msg_error">authentication failed</span>: ', $c);
-  $c=preg_replace('/failed: Permission denied/', '<span class="msg_error">failed: Permission denied</span>', $c);
-  $c=preg_replace('/lost connection after /', '<span class="msg_error">lost connection</span> after ', $c);
-  $c=preg_replace('/key retrieval failed/', '<span class="msg_error"> key retrieval failed</span>', $c);
-  $c=preg_replace('/removed/', '<span class="msg_error">removed</span>', $c);
-  $c=preg_replace('/SSL_accept error from /', '<span class="msg_error">SSL_accept error</span> from ', $c);
-  $c=preg_replace('/temporarily deferred/', '<span class="msg_error">temporarily deferred</span>', $c);
-  $c=preg_replace('/unknown user: /', '<span class="msg_error">unknown user</span>: ', $c);
-  $c=preg_replace('/ NOQUEUE: reject/', ' <span class="msg_error">NOQUEUE: reject</span>', $c);
-  $c=preg_replace('/ URIBL_BLOCKED /', ' <span class="msg_error">URIBL_BLOCKED</span> ', $c);
-  $c=preg_replace('/ RCVD_IN_DNSWL_BLOCKED /', ' <span class="msg_error">RCVD_IN_DNSWL_BLOCKED</span> ', $c);
-  $c=preg_replace('/ RCVD_IN_VALIDITY_CERTIFIED_BLOCKED /', ' <span class="msg_error">RCVD_IN_VALIDITY_CERTIFIED_BLOCKED</span> ', $c);
-  $c=preg_replace('/ RCVD_IN_VALIDITY_RPBL_BLOCKED /', ' <span class="msg_error">RCVD_IN_VALIDITY_RPBL_BLOCKED</span> ', $c);
-  $c=preg_replace('/ RCVD_IN_VALIDITY_SAFE_BLOCKED /', ' <span class="msg_error">RCVD_IN_VALIDITY_SAFE_BLOCKED</span> ', $c);
-  $c=preg_replace('/ RCVD_IN_ZEN_BLOCKED_OPENDNS /', ' <span class="msg_error">RCVD_IN_ZEN_BLOCKED_OPENDNS</span> ', $c);
   return $c;
 }
 // --------------------------------------------------------------------
