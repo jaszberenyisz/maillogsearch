@@ -1,0 +1,16 @@
+authentication failed: 
+failed: Permission denied
+lost connection after 
+key retrieval failed
+removed
+SSL_accept error from 
+temporarily deferred
+unknown user: 
+ DNSBL blocked you 
+ NOQUEUE: reject
+ RCVD_IN_DNSWL_BLOCKED 
+ RCVD_IN_VALIDITY_CERTIFIED_BLOCKED 
+ RCVD_IN_VALIDITY_RPBL_BLOCKED 
+ RCVD_IN_VALIDITY_SAFE_BLOCKED 
+ RCVD_IN_ZEN_BLOCKED_OPENDNS 
+ URIBL_BLOCKED 
