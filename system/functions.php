@@ -58,7 +58,12 @@ function make_links($c)
   $c=preg_replace('/SSL_accept error from /', '<span class="msg_error">SSL_accept error</span> from ', $c);
   $c=preg_replace('/unknown user: /', '<span class="msg_error">unknown user</span>: ', $c);
   $c=preg_replace('/failed: Permission denied/', '<span class="msg_error">failed: Permission denied</span>', $c);
+  $c=preg_replace('/ NOQUEUE: reject/', ' <span class="msg_error">NOQUEUE: reject</span>', $c);
   $c=preg_replace('/ URIBL_BLOCKED /', ' <span class="msg_error">URIBL_BLOCKED</span> ', $c);
+  $c=preg_replace('/ RCVD_IN_DNSWL_BLOCKED /', ' <span class="msg_error">RCVD_IN_DNSWL_BLOCKED</span> ', $c);
+  $c=preg_replace('/ RCVD_IN_VALIDITY_CERTIFIED_BLOCKED /', ' <span class="msg_error">RCVD_IN_VALIDITY_CERTIFIED_BLOCKED</span> ', $c);
+  $c=preg_replace('/ RCVD_IN_VALIDITY_RPBL_BLOCKED /', ' <span class="msg_error">RCVD_IN_VALIDITY_RPBL_BLOCKED</span> ', $c);
+  $c=preg_replace('/ RCVD_IN_VALIDITY_SAFE_BLOCKED /', ' <span class="msg_error">RCVD_IN_VALIDITY_SAFE_BLOCKED</span> ', $c);
   $c=preg_replace('/temporarily deferred/', '<span class="msg_error">temporarily deferred</span>', $c);
   $c=preg_replace('/key retrieval failed/', '<span class="msg_error"> key retrieval failed</span>', $c);
   return $c;
