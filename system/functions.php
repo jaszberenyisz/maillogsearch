@@ -76,7 +76,11 @@ function make_colors_addclass($c,$txt,$class)
 // Output: make_colors_addclass() output
 function make_colors_readfile($c,$file,$class)
 {
-  $filecontent=file_get_contents($file);
+  global $fc;
+  // Has file been used before?
+  if (!isset($fc[$file])) $fc[$file]=file_get_contents($file);
+  // Set content
+  $filecontent=$fc[$file];
   $lines=explode("\n",$filecontent);
   for ($i=0;$i<count($lines);$i++)
   {
