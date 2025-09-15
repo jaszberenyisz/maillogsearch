@@ -9,4 +9,5 @@ created in 2025
   define("_OK","OK");
   define("_oldest_on_top","Legrégebbi előre");
   define("_search","Keresés...");
+  define("_quick_search","Gyors keresés");
 ?>
