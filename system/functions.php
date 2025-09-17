@@ -53,7 +53,12 @@ function make_colors($c)
 // Output: HTML formatted content
 function make_colors_addclass($c,$txt,$class)
 {
-  if (substr($txt,-1)==":")
+  if (strpos($txt,"(.+)")>0)
+  {
+    $txt1=str_replace("(.+)","$1",$txt);
+    $txt2="";
+  }
+  elseif (substr($txt,-1)==":")
   {
     $txt1=substr($txt,0,strlen($txt)-1);
     $txt2=":";
