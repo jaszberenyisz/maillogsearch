@@ -1,5 +1,8 @@
+bad-header-quarantine
 Greylisted
+NOTIFICATION:
 not authenticated
 opendmarc(.+) none
-_WARN:
+opendkim(.+) no signing table match
+WARN:
 warning:
