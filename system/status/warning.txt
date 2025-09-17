@@ -1,4 +1,5 @@
+Greylisted
 not authenticated
+opendmarc(.+) none
 _WARN:
 warning:
-opendmarc(.+) fail
