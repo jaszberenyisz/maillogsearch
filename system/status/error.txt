@@ -2,8 +2,10 @@ authentication failed:
 failed: Permission denied
 lost connection after 
 key retrieval failed
+opendmarc(.+) fail
 removed
 SSL_accept error from 
+status=deferred
 temporarily deferred
 unknown user: 
  DNSBL blocked you 
