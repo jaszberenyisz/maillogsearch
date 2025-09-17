@@ -1,5 +1,5 @@
 250 2.0.0 Ok
+opendmarc(.+) pass
 Passed CLEAN
 Received-SPF: Pass
  dsn=2.0.0
-opendmarc(.+) pass
