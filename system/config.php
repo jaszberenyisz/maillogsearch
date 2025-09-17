@@ -19,11 +19,6 @@
   // Be carefull with no limit as it can consume a huge amount of memory on the client side too!
   $_SESSION["cfg"]["maxlines"]="5000";
 
-  // Custom keywords
-  // Array of static keywords for quicksearch
-  // Example: $_SESSION["cfg"]["keywords"]=array("one","two","email@somewhere.com","error");
-  $_SESSION["cfg"]["keywords"]=array();
-
   // Language selection
   // Default: english (en)
   $_SESSION["cfg"]["language"]="en";
