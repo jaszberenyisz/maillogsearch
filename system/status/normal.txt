@@ -2,3 +2,4 @@
 Passed CLEAN
 Received-SPF: Pass
  dsn=2.0.0
+opendmarc(.+) pass
