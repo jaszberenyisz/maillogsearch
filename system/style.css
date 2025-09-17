@@ -51,4 +51,3 @@ h2 { text-shadow: 2px 2px 5px #a0a0a0; }
 @media screen and (max-width: 600px) {
   div.snmp { display: table-cell !important; }
 }
-
