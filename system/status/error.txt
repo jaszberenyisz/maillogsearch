@@ -1,8 +1,10 @@
 authentication failed: 
 failed: Permission denied
+fatal error
 lost connection after 
 key retrieval failed
 opendmarc(.+) fail
+Parser error
 removed
 SSL_accept error from 
 status=deferred
