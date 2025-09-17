@@ -1,3 +1,4 @@
 not authenticated
 _WARN:
 warning:
+opendmarc(.+) fail
