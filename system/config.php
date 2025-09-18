@@ -19,6 +19,10 @@
   // Be carefull with no limit as it can consume a huge amount of memory on the client side too!
   $_SESSION["cfg"]["maxlines"]="5000";
 
+  // Automatic refresh interval
+  // In seconds
+  $_SESSION["cfg"]["refresh"]="3";
+
   // Language selection
   // Default: english (en)
   $_SESSION["cfg"]["language"]="en";
