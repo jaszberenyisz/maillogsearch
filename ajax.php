@@ -12,10 +12,10 @@
   (require_once("lang/".$_SESSION["cfg"]["language"].".php")) || die("No language file (lang/".$_SESSION["cfg"]["language"].".php) present!");
   (require_once("system/functions.php")) || die("Missing required system files (system/functions.php)!");
   (require_once("system/action.php")) || die("Missing required system files (system/action.php)!");
-  $a="main";
-  $fn=$a.".php";
+  $phpaf="main";
+  $phpfn=$phpaf.".php";
   $out="";
-  if (file_exists("php/".$fn)) require_once("php/".$fn);
-  else die("Missing required system files (php/".$fn.")!");
+  if (file_exists("php/".$phpfn)) require_once("php/".$phpfn);
+  else die("Missing required system files (php/".$phpfn.")!");
   print($out);
 ?>
