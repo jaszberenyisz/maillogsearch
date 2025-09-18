@@ -18,11 +18,13 @@
     </div>
     <div id="footer">mail.log search by Szabolcs Jászberényi</div>
     <script href="lib/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
+';
+  if ($_SESSION["refresh"]==1) $out.='    <script type="text/javascript">
       var ajaxReload;
       ajax("'.$reload_f.'&q='.$q.'","'.$reload_id.'",'.$reload.');
     </script>
-  </body>
+';
+  $out.='  </body>
 </html>
 ';
 ?>
