@@ -25,6 +25,7 @@
       <input type="submit" value="'._OK.'" />
     </form>
 ';
+  // Keywords
   if (count($_SESSION["cfg"]["keywords"])>0)
   {
     $out.='    <div id="quicksearch">
@@ -43,7 +44,31 @@
   }
   $out.='    <div class="info">'.(int)$_SESSION["cfg"]["maxlines"].' '._lines_shown.'.</div>
   </div><!-- class:col -->
-</div><!-- class:row -->
+';
+  // Auto refresh control
+  // Turn on/off manually
+  if ($_SESSION["refresh"]==1)
+  {
+    $status=_on;
+    $buttontext=_auto_refresh_off;
+    $m="auto_refresh_off";
+  }
+  else
+  {
+    $status=_off;
+    $buttontext=_auto_refresh_on;
+    $m="auto_refresh_on";
+  }
+  // UI for function
+  $out.='  <div class="col-12 col-lg-1 pt-0 text-center">
+    <div class="row">
+      <div class="col-lg-12 col"><a href="?f='.$phpaf.'&amp;muvelet='.$m.'&amp;q='.$q.'">'.$buttontext.'</a></div>
+      <div class="col-lg col">'._status.': '.$status.'</div>
+    </div><!-- class:row -->
+  </div><!-- class:col -->
+';
+  // End
+  $out.='</div><!-- class:row -->
 ';
 
   require_once("php/loglines.php");
