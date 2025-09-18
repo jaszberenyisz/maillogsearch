@@ -11,7 +11,6 @@
   (require_once("system/config_auto.php")) || die("No automatic configuration (system/config_auto.php) present!");
   (require_once("lang/".$_SESSION["cfg"]["language"].".php")) || die("No language file (lang/".$_SESSION["cfg"]["language"].".php) present!");
   (require_once("system/functions.php")) || die("Missing required system files (system/functions.php)!");
-  (require_once("system/action.php")) || die("Missing required system files (system/action.php)!");
   if (isset($_GET["f"]))
   {
     if (trim($_GET["f"])<>"")
