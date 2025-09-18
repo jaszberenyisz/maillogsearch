@@ -1,3 +1,4 @@
+authentication failure
 authentication failed: 
 failed: Permission denied
 fatal error
@@ -5,6 +6,7 @@ lost connection after
 key retrieval failed
 opendmarc(.+) fail
 Parser error
+Password verification failed
 removed
 SSL_accept error from 
 status=deferred
