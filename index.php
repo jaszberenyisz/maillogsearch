@@ -15,6 +15,7 @@
   $a="main";
   $fn=$a.".php";
   $out="";
+  $reload="flase";
   if (file_exists("php/".$fn))
   {
     require_once("php/".$fn);
