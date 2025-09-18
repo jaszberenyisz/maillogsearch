@@ -26,7 +26,11 @@ h2 { text-shadow: 2px 2px 5px #a0a0a0; }
 #loglines .logline:focus, #loglines .logline:hover { background: #e0e0e0; }
 #loglines .logline .loglinenumber { min-width: 40px; float: left; }
 #loglines .logline .loglinecontent { }
-/* OK messages */
+/* Info messages */
+#loglines .logline .loglinecontent .msg_info { color: #909090; }
+#loglines .logline:hover .loglinecontent .msg_info { color: #000000; }
+#loglines .logline:has(.loglinecontent .msg_info):hover { background: #f5f5f5; }
+/* Normal/OK messages */
 #loglines .logline .loglinecontent .msg_normal { color: #00a000; }
 #loglines .logline:hover .loglinecontent .msg_normal { color: #000000; }
 #loglines .logline:has(.loglinecontent .msg_normal):hover { background: #e0ffe0; }
