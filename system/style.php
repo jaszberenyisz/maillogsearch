@@ -18,6 +18,10 @@
     </div>
     <div id="footer">mail.log search by Szabolcs Jászberényi</div>
     <script href="lib/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      var ajaxReload;
+      ajax("'.$fn.'&amp;q='.$q.'",'.$reload.');
+    </script>
   </body>
 </html>
 ';
