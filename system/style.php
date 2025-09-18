@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="lib/bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="system/style.css?'.filemtime("system/style.css").'" rel="stylesheet" type="text/css" />
+    <script src="system/functions.js.php?PHPSESSID='.session_id().'" type="text/javascript"></script>
   </head>
   <body>
-    <div id="pname"><h1>mail.log search</h1></div>
     <div id="content">
       '.$body.'
     </div>
