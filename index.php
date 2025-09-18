@@ -12,7 +12,16 @@
   (require_once("lang/".$_SESSION["cfg"]["language"].".php")) || die("No language file (lang/".$_SESSION["cfg"]["language"].".php) present!");
   (require_once("system/functions.php")) || die("Missing required system files (system/functions.php)!");
   (require_once("system/action.php")) || die("Missing required system files (system/action.php)!");
-  $phpaf="main";
+  if (isset($_GET["f"]))
+  {
+    if (trim($_GET["f"])<>"")
+    {
+      if (file_exists("php/".$_GET["f"].".php")) $phpaf=$_GET["f"];
+      else $phpaf="main";
+    }
+    else $phpaf="main";
+  }
+  else $phpaf="main";
   $phpfn=$phpaf.".php";
   $out="";
   $reload="flase";
@@ -26,3 +35,4 @@
   (require_once("system/style.php")) || die("Missing required system files (system/style.php)!");
   print($out);
 ?>
+
