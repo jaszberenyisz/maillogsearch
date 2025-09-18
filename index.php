@@ -12,16 +12,16 @@
   (require_once("lang/".$_SESSION["cfg"]["language"].".php")) || die("No language file (lang/".$_SESSION["cfg"]["language"].".php) present!");
   (require_once("system/functions.php")) || die("Missing required system files (system/functions.php)!");
   (require_once("system/action.php")) || die("Missing required system files (system/action.php)!");
-  $a="main";
-  $fn=$a.".php";
+  $phpaf="main";
+  $phpfn=$phpaf.".php";
   $out="";
   $reload="flase";
-  if (file_exists("php/".$fn))
+  if (file_exists("php/".$phpfn))
   {
-    require_once("php/".$fn);
+    require_once("php/".$phpfn);
     $body=$out;
   }
-  else die("Missing required system files (php/".$fn.")!");
+  else die("Missing required system files (php/".$phpfn.")!");
   $out="";
   (require_once("system/style.php")) || die("Missing required system files (system/style.php)!");
   print($out);
