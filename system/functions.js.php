@@ -1,7 +1,7 @@
 <?php
   if (session_id()=="") session_start();
 ?>
-function ajax(x,reload=false,clear=false)
+function ajax(x,cid="content",reload=false,clear=false)
 {
   if ((reload==false)||(clear==true)) { clearTimeout(ajaxReload); }
   var xhttp = newxhttp();
@@ -9,9 +9,9 @@ function ajax(x,reload=false,clear=false)
   xhttp.onreadystatechange = function() {
     if (this.readyState==4 && this.status==200)
     {
-      var e = document.getElementById("content");
+      var e = document.getElementById(cid);
       e.innerHTML = this.responseText;
-      if (reload==true) { ajaxReload=setTimeout("ajax('"+x+"',"+reload+");",<?=(int)($_SESSION["cfg"]["refresh"]*1000); ?>); }
+      if (reload==true) { ajaxReload=setTimeout("ajax('"+x+"','"+cid+"',"+reload+");",<?=(int)($_SESSION["cfg"]["refresh"]*1000); ?>); }
     }
   }
   xhttp.send(null);
