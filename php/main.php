@@ -18,6 +18,8 @@ function print_line($ln,$txt)
 ';
 }
 
+  // AJAX reload?
+  $reload="true";
   // First filter
   $q="";
   if (isset($_POST["q"])) $q=$_POST["q"];
@@ -83,7 +85,7 @@ function print_line($ln,$txt)
     }
   }
 
-  // Print lines;
+  // Print lines
   if (count($c)>0)
   {
     $out.='<div id="loglines">'."\n";
