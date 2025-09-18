@@ -1,4 +1,6 @@
 250 2.0.0 Ok
+dkim: signing 
+dkim: VALID 
 opendmarc(.+) pass
 Passed CLEAN
 Received-SPF: Pass
