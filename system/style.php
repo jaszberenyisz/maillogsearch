@@ -20,7 +20,7 @@
     <script href="lib/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       var ajaxReload;
-      ajax("'.$phpaf.'&q='.$q.'",'.$reload.');
+      ajax("'.$reload_f.'&q='.$q.'","'.$reload_id.'",'.$reload.');
     </script>
   </body>
 </html>
