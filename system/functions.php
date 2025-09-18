@@ -37,6 +37,8 @@ function get_logfile($fn,$q,$c=array())
 // Output: HTML formatted content
 function make_colors($c)
 {
+  // Info status/messages
+  $c=make_colors_readfile($c,"system/status/info.txt","msg_info");
   // Normal status/messages
   $c=make_colors_readfile($c,"system/status/normal.txt","msg_normal");
   // Warning status/messages
