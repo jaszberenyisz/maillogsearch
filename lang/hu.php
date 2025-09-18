@@ -4,6 +4,8 @@ Hungarian language file
 created by Szabolcs Jászberényi <info at jszabolcs dot hu>
 created in 2025
 */
+  define("_auto_refresh_off","Automatikus frissítés ki");
+  define("_auto_refresh_on","Automatikus frissítés be");
   define("_newest_on_top","Legújabb előre");
   define("_lines_shown","sort mutat");
   define("_off","Ki");
@@ -11,5 +13,6 @@ created in 2025
   define("_OK","OK");
   define("_oldest_on_top","Legrégebbi előre");
   define("_search","Keresés...");
+  define("_status","Állapot");
   define("_quick_search","Gyors keresés");
 ?>
