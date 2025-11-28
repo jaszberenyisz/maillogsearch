@@ -75,6 +75,7 @@ function make_colors_addclass($c,$txt,$class)
     $txt1=$txt;
     $txt2="";
   }
+  if (str_contains($txt,"\\")) $txt1=str_replace("\\","",$txt1);
   return preg_replace('/'.$txt.'/', '<span class="'.$class.'">'.$txt1.'</span>'.$txt2, $c);
 }
 // --------------------------------------------------------------------
