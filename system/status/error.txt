@@ -12,6 +12,7 @@ SSL_accept error from
 status=deferred
 temporarily deferred
 unknown user: 
+User doesn't exist
  DNSBL blocked you 
  NOQUEUE: reject
  RCVD_IN_DNSWL_BLOCKED 
