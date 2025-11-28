@@ -109,6 +109,8 @@ function make_links($c)
   $c=preg_replace('/queued_as: ([A-Z0-9]{10}),/', 'queued_as: <a href="?q=$1">$1</a>,', $c);
   // forward as IDs
   $c=preg_replace('/forwarded as ([A-Z0-9]{10})/', 'forwarded as <a href="?q=$1">$1</a>', $c);
+  // sender non-delivery notification
+  $c=preg_replace('/ sender non-delivery notification: ([A-Z0-9]{10})/', ' sender non-delivery notification: <a href="?q=$1">$1</a>', $c);
   // E-mail addresses
   $c=preg_replace('/\&lt\;([^\&]*)/', '&lt;<a href="?q=$1">$1</a>', $c);
   return $c;
