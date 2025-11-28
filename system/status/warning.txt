@@ -2,6 +2,7 @@ bad-header-quarantine
 Greylisted
 ignoring connection from
 improper command pipelining
+No address associated with hostname
 NOTIFICATION:
 not authenticated
 opendmarc(.+) none
