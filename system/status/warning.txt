@@ -7,5 +7,6 @@ NOTIFICATION:
 not authenticated
 opendmarc(.+) none
 opendkim(.+) no signing table match
+sender non-delivery notification
 WARN:
 warning:
