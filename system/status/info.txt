@@ -1,4 +1,4 @@
 disconnect from
 connect from
 TLS connection established
- [STATS] 
+: \[STATS\] 
