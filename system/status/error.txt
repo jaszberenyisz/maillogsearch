@@ -1,5 +1,6 @@
 authentication failure
 authentication failed: 
+Client host rejected: cannot find your reverse hostname
 Error: open resolver
 failed: Permission denied
 fatal error
