@@ -1,5 +1,6 @@
 authentication failure
 authentication failed: 
+Error: open resolver
 failed: Permission denied
 fatal error
 Helo command rejected
@@ -23,4 +24,3 @@ unknown user:
  RCVD_IN_VALIDITY_SAFE_BLOCKED 
  RCVD_IN_ZEN_BLOCKED_OPENDNS 
  URIBL_BLOCKED 
-
