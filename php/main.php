@@ -61,6 +61,9 @@
   }
   // UI for function
   $out.='  <div class="col-12 col-lg-1 pt-0 text-center">
+    <a href="?page=mailq">Mail Queue</a>
+  </div><!-- class:col -->
+  <div class="col-12 col-lg-1 pt-0 text-center">
     <div class="row">
       <div class="col-lg-12 col"><a href="?f='.$phpaf.'&amp;muvelet='.$m.'&amp;q='.$q.'">'.$buttontext.'</a></div>
       <div class="col-lg col">'._status.': '.$status.'</div>
@@ -71,5 +74,7 @@
   $out.='</div><!-- class:row -->
 ';
 
-  require_once("php/loglines.php");
+  if (!isset($_GET["page"])) $_GET["page"]="";
+  if ($_GET["page"]=="mailq") require_once("php/mailq.php");
+  else require_once("php/loglines.php");
 ?>
