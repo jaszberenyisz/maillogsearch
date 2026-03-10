@@ -72,6 +72,6 @@ function print_line($ln,$txt)
       // Order by date: oldest on top
       for ($i=($all-1);$i<$totallines;$i++) { $ln++; print_line($ln,$c[$i]); }
     }
-    $out.="</div>\n";
+    $out.="</div><!-- id:loglines -->\n";
   }
 ?>
