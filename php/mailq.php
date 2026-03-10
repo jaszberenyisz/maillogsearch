@@ -15,8 +15,11 @@ function print_line($txt)
   global $out;
   // Some formating
   $txt=htmlspecialchars($txt);
-  $txt=make_links($txt);
-  $txt=make_colors($txt);
+  // E-mail IDs
+  // Replace the first word that can contain only alpha and numeric caracters. Must be 8-14 characters long and can not start with whitespace
+  $txt=preg_replace('/^[a-zA-Z0-9]{8,14}(?=\s|$)/m', '<a href="?q=$0">$0</a>', $txt);
+  // E-mail addresses (different than make_link() functions e-mail addresses)
+  $txt=preg_replace('/[^@\s]*@[^@\s]*\.[^@\s]*/', '<a href="?q=$0">$0</a>', $txt);
   // Print
   if (trim($txt)=="") $txt="&nbsp;";
   $out.='
