@@ -1,4 +1,15 @@
 <?php
+/*
+  You can dump the output of mailq to a file with a shell script.
+
+  For example:
+  mailq > /var/log/mailq.log
+
+  You can create a cron job running this short command (like every minute or so) and get the output of mailq on this program to show.
+  This tool allows you to view your mail queue remotely with a simple browser.
+  Be aware, that exposing it to the public internet is not a good idea! Always use VPN, or strong authenticated access to access this page!
+*/
+
 function print_line($txt)
 {
   global $out;
