@@ -5,6 +5,8 @@
   created in 2025
 
   mail.log search is a web based tool to make searching in mail.log files easier.
+
+  Be aware, that exposing this program to the public internet is not a good idea! Always use VPN, or strong authenticated access to access these pages!
 */
   if (session_id()=="") session_start();
   (require_once("system/config.php")) || die("No configuration (system/config.php) present!");
