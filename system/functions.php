@@ -17,10 +17,13 @@ function get_logfile($fn,$q,$c=array())
     {
       while (($line = fgets($f)) !== false)
       {
+        // Do we need to filter the output?
         if (strlen(trim($q))>0)
         {
+          // Yes, we need to filter
           if (strstr($line,$q)==true) $c[]=$line;
         }
+        // No, we don't need to filter
         else $c[]=$line;
       }
       fclose($f);
