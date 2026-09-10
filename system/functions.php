@@ -103,15 +103,19 @@ function make_colors_readfile($c,$file,$class)
 // Output: HTML formatted content
 function make_links($c)
 {
+// Fixed length IDs
+//  $len='{12}';
+// Variable length IDs {min,max}
+  $len='{8,14}';
   // E-mail IDs
-  $c=preg_replace('/]\: ([A-Z0-9]{10})\:/', ']: <a href="?q=$1">$1</a>: ', $c);
+  $c=preg_replace('/]\: ([A-Z0-9]'.$len.')\:/', ']: <a href="?q=$1">$1</a>: ', $c);
   // queue as IDs
-  $c=preg_replace('/queued as ([A-Z0-9]{10})/', 'queued as <a href="?q=$1">$1</a>', $c);
-  $c=preg_replace('/queued_as: ([A-Z0-9]{10}),/', 'queued_as: <a href="?q=$1">$1</a>,', $c);
+  $c=preg_replace('/queued as ([A-Z0-9]'.$len.')/', 'queued as <a href="?q=$1">$1</a>', $c);
+  $c=preg_replace('/queued_as: ([A-Z0-9]'.$len.'),/', 'queued_as: <a href="?q=$1">$1</a>,', $c);
   // forward as IDs
-  $c=preg_replace('/forwarded as ([A-Z0-9]{10})/', 'forwarded as <a href="?q=$1">$1</a>', $c);
+  $c=preg_replace('/forwarded as ([A-Z0-9]'.$len.')/', 'forwarded as <a href="?q=$1">$1</a>', $c);
   // sender non-delivery notification
-  $c=preg_replace('/ sender non-delivery notification: ([A-Z0-9]{10})/', ' sender non-delivery notification: <a href="?q=$1">$1</a>', $c);
+  $c=preg_replace('/ sender non-delivery notification: ([A-Z0-9]'.$len.')/', ' sender non-delivery notification: <a href="?q=$1">$1</a>', $c);
   // E-mail addresses
   $c=preg_replace('/\&lt\;([^\&]*)/', '&lt;<a href="?q=$1">$1</a>', $c);
   return $c;
