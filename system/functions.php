@@ -8,6 +8,9 @@
 function get_logfile($fn,$q,$c=array())
 {
   global $out;
+  // Convert query to word array
+  $q_words=explode(" ",$q);
+  // If log file exists
   if (file_exists($fn))
   {
 // Debugging purposes...
@@ -21,7 +24,20 @@ function get_logfile($fn,$q,$c=array())
         if (strlen(trim($q))>0)
         {
           // Yes, we need to filter
-          if (strstr($line,$q)==true) $c[]=$line;
+          // Exact text search / old method
+          //if (strstr($line,$q)==true) $c[]=$line;
+
+          // Search for all words in no particular order
+          $all_matched=true;
+          foreach ($q_words as $q_word)
+          {
+            if (preg_match('~'.$q_word.'~',$line)==false)
+            {
+              $all_matched=false;
+              break;
+            }
+          }
+          if ($all_matched==true) $c[]=$line;
         }
         // No, we don't need to filter
         else $c[]=$line;
