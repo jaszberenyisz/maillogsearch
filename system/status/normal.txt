@@ -5,3 +5,4 @@ opendmarc(.+) pass
 Passed CLEAN
 Received-SPF: Pass
  dsn=2.0.0
+postfix\/master(.+)daemon started
