@@ -9,7 +9,7 @@ function get_logfile($fn,$q,$c=array())
 {
   global $out;
   // Convert query to word array
-  $q_words=explode(" ",$q);
+  $words=explode(" ",$q);
   // If log file exists
   if (file_exists($fn))
   {
@@ -25,13 +25,13 @@ function get_logfile($fn,$q,$c=array())
         {
           // Yes, we need to filter
           // Exact text search / old method
-          //if (strstr($line,$q)==true) $c[]=$line;
+          //if (stristr($line,$q)==true) $c[]=$line;
 
           // Search for all words in no particular order
           $all_matched=true;
-          foreach ($q_words as $q_word)
+          foreach ($words as $word)
           {
-            if (preg_match('~'.$q_word.'~',$line)==false)
+            if (preg_match('~'.$word.'~i',$line)==false)
             {
               $all_matched=false;
               break;
