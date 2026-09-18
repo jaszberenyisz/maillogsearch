@@ -65,7 +65,7 @@ function print_line($ln,$txt)
     if ($_SESSION["order"]=="0")
     {
       // Order by date: newest on top
-      for ($i=($totallines-1);$i>=$all;$i--) { $ln++; print_line($ln,$c[$i]); }
+      for ($i=($totallines);$i>=$all;$i--) { $ln++; print_line($ln,$c[$i-1]); }
     }
     else
     {
