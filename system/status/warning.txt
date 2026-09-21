@@ -11,5 +11,6 @@ not authenticated
 opendmarc(.+) none
 opendkim(.+) no signing table match
 sender non-delivery notification
+TLS is required, but was not offered by host
 WARN:
 warning:
