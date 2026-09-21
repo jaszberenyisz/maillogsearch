@@ -4,5 +4,6 @@ dkim: VALID
 opendmarc(.+) pass
 Passed CLEAN
 Received-SPF: Pass
+status=sent
  dsn=2.0.0
 postfix\/master(.+)daemon started
